@@ -1,0 +1,22 @@
+.moviewrapper {
+  display: flex;
+}
+
+.datailswrapper {
+  padding: 10px;
+}
+
+.poster {
+  display: block;
+  width: 300px;
+}
+.movietitle {
+}
+.overview {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.genres {
+  margin-right: 10px;
+}

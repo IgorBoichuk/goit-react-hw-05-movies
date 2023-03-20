@@ -6,7 +6,13 @@ export const Layout = () => {
   return (
     <>
       <Header />
-      <div>
+      <div
+        style={{
+          fontSize: 20,
+          color: '#010101',
+          padding: 10,
+        }}
+      >
         <Outlet />
       </div>
     </>
