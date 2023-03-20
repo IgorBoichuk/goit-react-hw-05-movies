@@ -1,0 +1,6 @@
+.header {
+  border-bottom: 1px solid black;
+  display: flex;
+  gap: 20px;
+  font-size: 30px;
+}
