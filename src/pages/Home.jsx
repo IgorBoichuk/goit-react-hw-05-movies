@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const API_KEY = '452041465018fe0b65085f61bacde4ab';
+
 export const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=452041465018fe0b65085f61bacde4ab`
-    )
+    fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`)
       .then(response => response.json())
       .then(json => setMovies(json.results));
   }, []);

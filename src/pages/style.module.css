@@ -2,6 +2,13 @@
   display: flex;
 }
 
+.button {
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
 .datailswrapper {
   padding: 10px;
 }
@@ -19,4 +26,18 @@
 
 .genres {
   margin-right: 10px;
+}
+
+.form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.input {
+  width: 500px;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 20px;
+  padding-left: 10px;
 }
