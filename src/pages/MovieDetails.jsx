@@ -1,11 +1,15 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 
 import style from './style.module.css';
 
 const getPosterURL = posterPath => {
   return `https://image.tmdb.org/t/p/w500${posterPath}`;
 };
+
+const API_KEY = '452041465018fe0b65085f61bacde4ab';
 
 export const MovieDetails = () => {
   const { id } = useParams();
@@ -15,8 +19,7 @@ export const MovieDetails = () => {
   const handleBackBtn = () => {
     navigate(-1);
   };
-
-  const API_KEY = '452041465018fe0b65085f61bacde4ab';
+  const location = useLocation();
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
@@ -46,8 +49,25 @@ export const MovieDetails = () => {
             </span>
           ))}
         </div>
-        <div></div>
       </div>
+      <div className={style.information}>
+        <p>Additional information</p>
+        <ul>
+          <li>
+            <Link to="cast" state={{ ...location.state }}>
+              Cast
+            </Link>
+          </li>
+          <li>
+            <Link to="reviews" state={{ ...location.state }}>
+              Reviews
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
